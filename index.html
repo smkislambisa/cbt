@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1730"><meta name="description" content="AbdUmar CBT - Sistem Ujian Online SMK Islam 1 Blitar">
+  <title>AbdUmar CBT | SMK Islam 1 Blitar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="loginScreen" class="login-screen hidden">
+  <div class="login-card glass"><div class="brand-mark large"><i class="bi bi-mortarboard-fill"></i></div><p class="eyebrow">SMK ISLAM 1 BLITAR</p><h1>Selamat datang di<br><span>AbdUmar CBT</span></h1><p class="muted">Masuk untuk mengelola pembelajaran dan ujian digital.</p>
+    <form id="loginForm"><label>Email</label><input id="email" type="email" placeholder="nama@sekolah.id" required><label>Kata sandi</label><input id="password" type="password" placeholder="Masukkan kata sandi" required><button class="btn primary full" type="submit">Masuk <i class="bi bi-arrow-right"></i></button></form><p id="loginError" class="error"></p><p class="tiny muted">Akun dibuat oleh administrator sekolah.</p>
+  </div>
+</div>
+<div class="app-shell" id="appShell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div><div><b>AbdUmar CBT</b><small>SMK Islam 1 Blitar</small></div><button class="icon-btn mobile-only" id="closeSidebar"><i class="bi bi-x-lg"></i></button></div>
+    <div class="school-chip"><span class="online-dot"></span> Sistem Akademik Digital</div>
+    <nav id="mainNav">
+      <div class="nav-caption">MENU UTAMA</div>
+      <button class="nav-link active" data-page="dashboard"><i class="bi bi-grid-1x2-fill"></i>Dashboard</button>
+      <div class="nav-caption">MANAJEMEN AKADEMIK</div>
+      <button class="nav-link" data-page="students"><i class="bi bi-people"></i>Data Siswa</button>
+      <button class="nav-link" data-page="teachers"><i class="bi bi-person-workspace"></i>Data Guru</button>
+      <button class="nav-link" data-page="classes"><i class="bi bi-diagram-3"></i>Kelas & Rombel</button>
+      <button class="nav-link" data-page="subjects"><i class="bi bi-journal-bookmark"></i>Mata Pelajaran</button>
+      <div class="nav-caption">UJIAN & PENILAIAN</div>
+      <button class="nav-link" data-page="questions"><i class="bi bi-patch-question"></i>Bank Soal</button>
+      <button class="nav-link" data-page="exams"><i class="bi bi-clipboard2-check"></i>Manajemen Ujian</button>
+      <button class="nav-link" data-page="monitoring"><i class="bi bi-display"></i>Monitoring Ujian</button>
+      <button class="nav-link" data-page="grading"><i class="bi bi-clipboard-data"></i>Penilaian</button>
+      <button class="nav-link" data-page="reports"><i class="bi bi-file-earmark-bar-graph"></i>Laporan Hasil</button>
+      <div class="nav-caption">PEMBELAJARAN</div>
+      <button class="nav-link" data-page="classroom"><i class="bi bi-easel"></i>Ruang Kelas</button>
+      <button class="nav-link" data-page="attendance"><i class="bi bi-calendar2-check"></i>Absensi</button>
+      <button class="nav-link" data-page="reportcards"><i class="bi bi-file-earmark-person"></i>Rapor Digital</button>
+      <div class="nav-caption">SISTEM</div>
+      <button class="nav-link" data-page="users"><i class="bi bi-shield-lock"></i>Pengguna & Hak Akses</button>
+      <button class="nav-link" data-page="settings"><i class="bi bi-gear"></i>Pengaturan</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-box"><i class="bi bi-lightbulb"></i><div><b>Butuh bantuan?</b><small>Pusat panduan AbdUmar CBT</small></div><i class="bi bi-arrow-up-right"></i></div><div class="version">ABDCBT · Versi 1.0.0</div></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><div class="top-left"><button class="icon-btn mobile-only" id="openSidebar"><i class="bi bi-list"></i></button><div><div class="breadcrumb">SMK ISLAM 1 BLITAR <i class="bi bi-chevron-right"></i> <b id="crumb">Dashboard</b></div><div class="top-date" id="todayLabel"></div></div></div><div class="top-actions"><span class="connection" id="connection"><i class="bi bi-cloud-check"></i> Mode demo</span><button class="icon-btn" title="Notifikasi"><i class="bi bi-bell"></i><em></em></button><div class="profile"><div class="avatar">AU</div><div><b id="userName">Administrator</b><small id="userRole">Super Admin</small></div><button class="icon-btn" id="profileMenu"><i class="bi bi-chevron-down"></i></button></div></div></header>
+    <section class="content" id="pageContent"></section>
+    <footer>© 2026 AbdUmar CBT · SMK Islam 1 Blitar <span>Belajar, Berlatih, Berprestasi.</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal-card"><div class="modal-head"><h3 id="modalTitle">Form</h3><button class="icon-btn" id="modalClose"><i class="bi bi-x-lg"></i></button></div><div id="modalBody"></div></div></div>
+<script type="module" src="js/app.js"></script>
+</body></html>

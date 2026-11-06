@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    // Tahap awal: hanya user yang sudah login dapat membaca profilnya sendiri.
+    match /users/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow create: if signedIn() && request.auth.uid == uid;
+      allow update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+    }
+    // Kebijakan default menolak seluruh koleksi sampai aturan berbasis role
+    // diselesaikan dan diuji pada Tahap 2. Jangan membuka akses publik.
+    match /{document=**} { allow read, write: if false; }
+  }
+}
